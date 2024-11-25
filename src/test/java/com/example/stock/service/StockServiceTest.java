@@ -21,8 +21,6 @@ class StockServiceTest {
     @Autowired
     private StockRepository stockRepository;
 
-
-
     @BeforeEach
     void setUp() {
         stockRepository.saveAndFlush(new Stock(1L, 100L));
@@ -62,6 +60,5 @@ class StockServiceTest {
 
         Stock stock = stockRepository.findById(1L).orElseThrow();
         assertEquals(0, stock.getQuantity());
-
     }
 }
